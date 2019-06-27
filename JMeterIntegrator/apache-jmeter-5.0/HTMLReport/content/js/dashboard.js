@@ -167,7 +167,7 @@ $(document).ready(function() {
     });
 
     // Creates APDEX table
-    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.475, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.475, 500, 1500, "HTTPExampleSampler"], "isController": false}]}, function(index, item){
+    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.5, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.5, 500, 1500, "HTTPExampleSampler"], "isController": false}]}, function(index, item){
         switch(index){
             case 0:
                 item = item.toFixed(3);
@@ -181,7 +181,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 20, 0, 0.0, 867.8, 725, 1891, 1223.0000000000007, 1859.1499999999996, 1891.0, 0.9279881217520415, 0.49027497448032664, 0.1277796144209354], "isController": false}, "titles": ["Label", "#Samples", "KO", "Error %", "Average", "Min", "Max", "90th pct", "95th pct", "99th pct", "Throughput", "Received", "Sent"], "items": [{"data": ["HTTPExampleSampler", 20, 0, 0.0, 867.8, 725, 1891, 1223.0000000000007, 1859.1499999999996, 1891.0, 0.9279881217520415, 0.49027497448032664, 0.1277796144209354], "isController": false}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 20, 0, 0.0, 848.6, 739, 1391, 1112.5000000000005, 1377.9499999999998, 1391.0, 0.913575735428467, 0.482660618033985, 0.1257950963822401], "isController": false}, "titles": ["Label", "#Samples", "KO", "Error %", "Average", "Min", "Max", "90th pct", "95th pct", "99th pct", "Throughput", "Received", "Sent"], "items": [{"data": ["HTTPExampleSampler", 20, 0, 0.0, 848.6, 739, 1391, 1112.5000000000005, 1377.9499999999998, 1391.0, 0.913575735428467, 0.482660618033985, 0.1257950963822401], "isController": false}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:

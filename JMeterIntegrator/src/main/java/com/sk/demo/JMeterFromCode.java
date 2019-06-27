@@ -36,6 +36,7 @@ import org.apache.jmeter.threads.ThreadGroup;
 import org.apache.jmeter.threads.gui.ThreadGroupGui;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jmeter.visualizers.backend.BackendListener;
+import org.apache.jmeter.visualizers.backend.BackendListenerContext;
 import org.apache.jorphan.collections.HashTree;
 import org.apache.jorphan.collections.ListedHashTree;
 
@@ -184,11 +185,12 @@ public class JMeterFromCode {
                 argumentList.add(new Argument("graphiteHost","localhost"));
                 argumentList.add(new Argument("rootMetricsPrefix","jmeter."));
                 argumentList.add(new Argument("summaryOnly","true"));
+                argumentList.add(new Argument("percentiles","90;95;99"));
                 arguments.setArguments(argumentList);
 
 
                 //BackendListenerContext bLC = new BackendListenerContext(arguments);
-
+                
                 BackendListener bLG = new BackendListener();
                 bLG.setClassname("org.apache.jmeter.visualizers.backend.graphite.GraphiteBackendListenerClient");
                 bLG.setArguments(arguments);
@@ -198,7 +200,7 @@ public class JMeterFromCode {
                 // 2nd method to initialize subtrees
                 testPlanTree.add(testPlan, csvDataSet);
                 testPlanTree.add(testPlan, randomVariableConfig);
-                //testPlanTree.add(testPlan, bLG);
+                testPlanTree.add(testPlan, bLG);
 
                 HashTree threadGroupHashTree = testPlanTree.add(testPlan, threadGroup);
 
@@ -212,7 +214,7 @@ public class JMeterFromCode {
                 //threadGroupHashTree.add(blazemetercomSampler);
                 threadGroupHashTree.add(pauseAction);
                 threadGroupHashTree.add(examplecomSampler);
-                threadGroupHashTree.add(bLG);
+                //threadGroupHashTree.add(bLG);
 
                 //threadGroupHashTree.add(ifController).add(blazemetercomSampler);
 
