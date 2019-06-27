@@ -1,5 +1,10 @@
 package com.sk.demo;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.jmeter.config.Argument;
 import org.apache.jmeter.config.Arguments;
@@ -31,19 +36,8 @@ import org.apache.jmeter.threads.ThreadGroup;
 import org.apache.jmeter.threads.gui.ThreadGroupGui;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jmeter.visualizers.backend.BackendListener;
-import org.apache.jmeter.visualizers.backend.BackendListenerClient;
-import org.apache.jmeter.visualizers.backend.BackendListenerContext;
-import org.apache.jmeter.visualizers.backend.BackendListenerGui;
-import org.apache.jmeter.visualizers.backend.graphite.GraphiteBackendListenerClient;
-import org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient;
 import org.apache.jorphan.collections.HashTree;
 import org.apache.jorphan.collections.ListedHashTree;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 
 public class JMeterFromCode {
