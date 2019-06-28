@@ -48,7 +48,7 @@ public class JMeterFromCode {
         // Jmeter location
         File jmeterHome = new File(System.getProperty("jmeter.home", "apache-jmeter-5.0"));
         String slash = System.getProperty("file.separator");
-
+        // Run program only when jMeter library exists
         if (jmeterHome.exists()) {
             File jmeterProperties = new File(jmeterHome.getPath() + slash + "bin" + slash + "jmeter.properties");
             if (jmeterProperties.exists()) {
